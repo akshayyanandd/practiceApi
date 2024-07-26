@@ -1,0 +1,116 @@
+/* Overall Page Styling */
+body {
+    background-color: #e0f7fa;
+    /* Light cyan background for better readability */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    /* Remove default margin */
+    font-family: Arial, sans-serif;
+    /* Set a clean font */
+}
+
+/* Container for Form and List */
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Slightly larger gap for form elements */
+    padding: 20px;
+    /* Add padding for spacing */
+    border-radius: 8px;
+    /* Rounded corners for a modern look */
+    background-color: #ffffff;
+    /* White background for the form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+}
+
+/* Form Input Styling */
+form input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    /* Light border for inputs */
+    border-radius: 4px;
+    /* Slightly rounded corners for inputs */
+    font-size: 16px;
+    /* Larger text for readability */
+}
+
+/* Submit Button Styling */
+form button {
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    /* Rounded corners for the button */
+    background-color: #00796b;
+    /* Teal background color */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Smooth background color transition */
+}
+
+form button:hover {
+    background-color: #004d40;
+    /* Darker teal on hover */
+}
+
+/* List Styling */
+ul {
+    list-style-type: none;
+    /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* List Item Styling */
+ul li {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    /* White background for list items */
+    border: 1px solid #ddd;
+    /* Light border for list items */
+    border-radius: 4px;
+    /* Rounded corners for list items */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    margin-bottom: 10px;
+    /* Space between list items */
+}
+
+/* Action Buttons Container Styling */
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Action Buttons Styling */
+.actions button {
+    padding: 8px 12px;
+    background-color: #000000;
+    /* Black background color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    /* Rounded corners for action buttons */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Smooth background color transition */
+}
+
+.actions button:hover {
+    background-color: #ffffff;
+    /* White background on hover */
+    color: #000000;
+    /* Black text color on hover */
+}
