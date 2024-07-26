@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useContactContext } from "../context/ContactContext";
+import { useNavigate } from "react-router-dom";
 
 const ListContacts = () => {
   const { contacts, deleteHandler, editHandler } = useContactContext();
+  const navigate = useNavigate();
   return (
     <ul className="ul">
       {contacts?.map((data) => (
@@ -13,7 +15,9 @@ const ListContacts = () => {
             <p>{data.phoneNumber}</p>
           </div>
           <div className="actions">
-            <button onClick={() => editHandler(data)}>Edit</button>
+            <button onClick={() => navigate(`/editContact/${data._id}`)}>
+              Edit
+            </button>
             <button onClick={() => deleteHandler(data._id)}>Delete</button>
           </div>
         </li>

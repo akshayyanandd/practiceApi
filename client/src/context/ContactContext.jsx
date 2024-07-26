@@ -45,10 +45,33 @@ const ContactContextProvider = ({ children }) => {
     }
   };
 
-  const editHandler = (contact) => {
-    console.log("contact from edit ", contact);
+  const editHandler = async (contact) => {
+    //console.log("contact from edit ", contact);
     // Placeholder for edit logic
     //setContactForm(contact);
+
+    try {
+      const res = await fetch(`/api/v1/contacts/${contact._id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(contact),
+      });
+
+      const result = await res.json();
+      console.log("Added contact response: ", result);
+
+      if (result.success) {
+        fetchContacts(); // Refetch all contacts after adding a new one
+      }
+
+      if (!result.success) {
+        alert(result.message);
+      }
+    } catch (error) {
+      console.error("Error adding contact: ", error);
+    }
   };
 
   const addContact = async (newContact) => {
@@ -75,6 +98,18 @@ const ContactContextProvider = ({ children }) => {
       console.error("Error adding contact: ", error);
     }
   };
+  const getSingleContactById = async (id) => {
+    try {
+      const res = await fetch(`/api/v1/contacts/${id}`, {
+        method: "GET",
+      });
+
+      const result = await res.json();
+      return result.data;
+    } catch (error) {
+      console.error("Error adding contact: ", error);
+    }
+  };
 
   return (
     <ContactContext.Provider
@@ -85,6 +120,7 @@ const ContactContextProvider = ({ children }) => {
         deleteHandler,
         editHandler,
         addContact,
+        getSingleContactById,
       }}
     >
       {children}
